@@ -25,7 +25,7 @@
 
 <details><summary>画像を開く</summary><div>
 
-![image](https://user-images.githubusercontent.com/22496143/74085215-2d251980-4aba-11ea-9022-946f1ea9f799.png)
+![image](https://user-images.githubusercontent.com/22496143/74086217-3adf9c80-4ac4-11ea-985e-20df3189ad21.png)
 
 ![image](https://user-images.githubusercontent.com/22496143/74085202-0d8df100-4aba-11ea-9d2b-c84de4710241.png)
 
