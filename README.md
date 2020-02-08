@@ -2,6 +2,11 @@
 
 ツクール MV でツクール 2000 のような挙動を目指したいプラグイン集
 
+## ダウンロード
+
+1. [こちらから zip をダウンロード](https://github.com/katai5plate/rpgmv-2000-like-plugins/archive/master.zip)
+2. `js/plugins/` の中にプラグインが入っています。
+
 ## おしながき
 
 ### H2A_2K_core.js
@@ -31,3 +36,24 @@
   - 顔グラフィック左右反転（文章で `\R`）
   - F12 キー
 - このプラグインはくらむぼん氏の QuickMove.js を改変したものです。
+
+## バグ報告について
+
+- [ここからバグ報告をしてください](https://github.com/katai5plate/rpgmv-2000-like-plugins/issues)
+- バグ報告には GitHub のアカウント登録が必要です。`New issue` という緑色のボタンから報告してください。
+- バグ修正も歓迎します。このリポジトリを Fork して、変更したものを Pull Request してください。
+
+## 開発方法について
+
+- 必須:
+  - Git
+  - Node.js
+  - Yarn
+  - VSCode
+  - VSCode: Prettier
+
+```
+git clone https://github.com/katai5plate/rpgmv-2000-like-plugins
+cd rpgmv-2000-like-plugins
+yarn
+```
