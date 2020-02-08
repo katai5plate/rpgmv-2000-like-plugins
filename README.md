@@ -13,6 +13,12 @@
 
 ### H2A_2K_core.js
 
+<details><summary>画像を開く</summary><div>
+
+![image](https://user-images.githubusercontent.com/22496143/74085963-e3403180-4ac1-11ea-94b9-e354c1d474b1.png)
+
+</div></details>
+
 - このプラグイン群のコアです。これが無ければ以下プラグインは動作しません。
 
 ### H2A_2K_charset.js
