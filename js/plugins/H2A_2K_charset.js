@@ -13,6 +13,10 @@
  * 注意:
  * - パレットが無い画像の場合は defaultColor が透過色になります。
  *
+ * @param scale
+ * @desc キャラクターの拡大率
+ * @default 3
+ *
  * @param defaultColor
  * @desc パレットが見つからなかった場合の透過色: R,G,B
  * @default 32,156,0
@@ -27,6 +31,7 @@
 
   var pluginParams = PluginManager._parameters.h2a_2k_charset;
   var params = {
+    scale: Number(pluginParams.scale),
     defaultColor: pluginParams.defaultColor.split(",").map(Number),
     customColor:
       pluginParams.customColor === ""
@@ -70,13 +75,13 @@
     this._is2kCharacter = ImageManager.is2kCharacter(this._characterName);
   };
 
-  // 3 倍表示する
+  // 歩行グラを N 倍表示する
   var updateCharacterFrame = Sprite_Character.prototype.updateCharacterFrame;
   Sprite_Character.prototype.updateCharacterFrame = function() {
     updateCharacterFrame.apply(this);
     if (this._is2kCharacter) {
-      this.scale.x = 3;
-      this.scale.y = 3;
+      this.scale.x = params.scale;
+      this.scale.y = params.scale;
     }
   };
 
