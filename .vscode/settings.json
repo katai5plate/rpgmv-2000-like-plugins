@@ -1,0 +1,7 @@
+{
+  "prettier.tabWidth": 2,
+  "search.exclude": {
+    "**/node_modules": false
+  },
+  "search.useIgnoreFiles": false
+}

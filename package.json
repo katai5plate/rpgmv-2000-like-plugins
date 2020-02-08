@@ -1,0 +1,31 @@
+{
+  "name": "rpgmv-2000-like-plugins",
+  "version": "1.0.0",
+  "description": "ツクールMVでツクール2000のような挙動を目指したいプラグイン集",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katai5plate/rpgmv-2000-like-plugins.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katai5plate/rpgmv-2000-like-plugins/issues"
+  },
+  "homepage": "https://github.com/katai5plate/rpgmv-2000-like-plugins#readme",
+  "dependencies": {
+    "openmv": "rpgtkoolmv/corescript"
+  },
+  "js-flags": "--expose-gc",
+  "window": {
+    "title": "",
+    "toolbar": false,
+    "width": 816,
+    "height": 624,
+    "icon": "icon/icon.png"
+  }
+}

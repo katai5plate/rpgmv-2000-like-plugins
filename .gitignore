@@ -1,3 +1,16 @@
+audio
+data
+fonts
+icon
+img
+js/libs
+js/plugins/Community_Basic.js
+js/main.js
+js/plugins.js
+movies
+save
+Game.rpgproject
+
 # Logs
 logs
 *.log
