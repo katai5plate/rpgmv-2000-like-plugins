@@ -1,5 +1,38 @@
+/*:
+ * @plugindesc MV で 2000 する: キャラチップ
+ * @author Had2Apps
+ *
+ * @help ツクール2000 のキャラチップをそのまま使えるようにします。
+ *
+ * 使い方:
+ * 1. 素材を img/charactors に入れる
+ * 2. ファイル名の先頭に `2k_` を付け、
+ *    パレット 0 番に透過色が設定されていることを確認する
+ * 3. 問題なく動くことを確認したら、お楽しみタイム
+ *
+ * 注意:
+ * - パレットが無い画像の場合は defaultColor が透過色になります。
+ *
+ * @param defaultColor
+ * @desc パレットが見つからなかった場合の透過色: R,G,B
+ * @default 32,156,0
+ *
+ * @param customColor
+ * @desc 透過色を固定する: R,G,B or 空
+ * @default
+ */
+
 (function() {
   "use strict";
+
+  var pluginParams = PluginManager._parameters.h2a_2k_charset;
+  var params = {
+    defaultColor: pluginParams.defaultColor.split(",").map(Number),
+    customColor:
+      pluginParams.customColor === ""
+        ? null
+        : pluginParams.customColor.split(",").map(Number)
+  };
 
   // ファイル名で判断
   var is2kCharacter = function(filename, noHead) {
@@ -19,7 +52,7 @@
       bitmap.addLoadListener(function() {
         bitmap.rotateHue(hue);
         if (is2kCharacter(path, true) && path.contains("/characters/")) {
-          bitmap.chroma(); //
+          bitmap.chroma(params.defaultColor, params.customColor); //
         }
       });
       this._imageCache.add(key, bitmap);
