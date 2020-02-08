@@ -39,47 +39,25 @@
         : pluginParams.customColor.split(",").map(Number)
   };
 
-  // ファイル名で判断
-  var is2kCharacter = function(filename, noHead) {
-    var sign = noHead ? filename.match(/2k_+/) : filename.match(/^2k_+/);
-    return sign && sign[0].contains("2k_");
-  };
-  ImageManager.is2kCharacter = is2kCharacter;
-
   // 画像が読み込まれた時の処理を埋め込む
-  ImageManager.loadNormalBitmap = function(path, hue) {
-    var key = this._generateCacheKey(path, hue);
-    var bitmap = this._imageCache.get(key);
-    if (!bitmap) {
-      bitmap = Bitmap.load(path);
-      this._callCreationHook(bitmap);
-
-      bitmap.addLoadListener(function() {
-        bitmap.rotateHue(hue);
-        if (is2kCharacter(path, true) && path.contains("/characters/")) {
-          bitmap.chroma(params.defaultColor, params.customColor); //
-        }
-      });
-      this._imageCache.add(key, bitmap);
-    } else if (!bitmap.isReady()) {
-      bitmap.decode();
+  r2k.bitmapOnLoadList.push(function(bitmap, path, hue) {
+    if (ImageManager.is2kPrefix(path, true) && path.contains("/characters/")) {
+      bitmap.chroma(params.defaultColor, params.customColor);
     }
-
-    return bitmap;
-  };
+  });
 
   // 常に判定する
   var setCharacterBitmap = Sprite_Character.prototype.setCharacterBitmap;
   Sprite_Character.prototype.setCharacterBitmap = function() {
     setCharacterBitmap.apply(this);
-    this._is2kCharacter = ImageManager.is2kCharacter(this._characterName);
+    this._is2kPrefix = ImageManager.is2kPrefix(this._characterName);
   };
 
   // 歩行グラを N 倍表示する
   var updateCharacterFrame = Sprite_Character.prototype.updateCharacterFrame;
   Sprite_Character.prototype.updateCharacterFrame = function() {
     updateCharacterFrame.apply(this);
-    if (this._is2kCharacter) {
+    if (this._is2kPrefix) {
       this.scale.x = params.scale;
       this.scale.y = params.scale;
     }
@@ -88,7 +66,7 @@
   // 2kキャラの向きを強制補正
   Sprite_Character.prototype.characterPatternY = function() {
     return (
-      ((this._is2kCharacter
+      ((this._is2kPrefix
         ? [, , 6, , 8, , 4, , 2][this._character.direction()]
         : this._character.direction()) -
         2) /
@@ -105,7 +83,7 @@
   ) {
     var bitmap = ImageManager.loadCharacter(characterName);
     var big = ImageManager.isBigCharacter(characterName);
-    var k2 = ImageManager.is2kCharacter(characterName); // 判定
+    var k2 = ImageManager.is2kPrefix(characterName); // 判定
     var pw = bitmap.width / (big ? 3 : 12);
     var ph = bitmap.height / (big ? 4 : 8);
     var n = big ? 0 : characterIndex;

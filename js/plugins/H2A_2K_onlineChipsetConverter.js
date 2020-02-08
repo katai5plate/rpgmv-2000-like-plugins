@@ -29,7 +29,7 @@
   var ERR_CRASH =
     "処理を中断しました。コードが処理できません。\n素材変換器素材変換器のソースコードが\n大幅に変更された可能性があります。\n自前で修正する場合は、内部のスクレイピング方法を変更してください。";
 
-  var pluginParams = PluginManager._parameters.h2a_2k_onlinechipsetconverter;
+  var pluginParams = PluginManager._parameters.h2a_2k_charset;
   var params = {
     chipSize: { 1: 1, 2: 2, 3: 3 }[pluginParams.chipSize] || 3
   };
