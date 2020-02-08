@@ -1,34 +1,12 @@
-(() => {
+(function() {
+  "use strict";
+
   // ファイル名で判断
   var is2kCharacter = function(filename, noHead) {
     var sign = noHead ? filename.match(/2k_+/) : filename.match(/^2k_+/);
     return sign && sign[0].contains("2k_");
   };
   ImageManager.is2kCharacter = is2kCharacter;
-
-  // 2k のキャラチップだけ透明色置き換えをする
-  Bitmap.prototype.set2k = function() {
-    if (is2kCharacter(this._url, true) && this._url.contains("/characters/")) {
-      var that = this;
-      var process = function(color) {
-        var img = that._context.getImageData(0, 0, that.width, that.height);
-        for (var i = 0; i < img.data.length; i += 4) {
-          if (img.data.slice(i, i + 3).join() === color.join())
-            img.data[i + 3] = 0;
-        }
-        that._context.putImageData(img, 0, 0);
-      };
-      // パレット番号 0 番から色を取得
-      r2k
-        .asyncGetPellete(that)
-        .then(x => x[0])
-        .then(process)
-        .catch(function() {
-          // TODO: プラグインからデフォルト透過色を指定できるようにする
-          process([0, 0, 0]);
-        });
-    }
-  };
 
   // 画像が読み込まれた時の処理を埋め込む
   ImageManager.loadNormalBitmap = function(path, hue) {
@@ -40,7 +18,9 @@
 
       bitmap.addLoadListener(function() {
         bitmap.rotateHue(hue);
-        bitmap.set2k(); //
+        if (is2kCharacter(path, true) && path.contains("/characters/")) {
+          bitmap.chroma(); //
+        }
       });
       this._imageCache.add(key, bitmap);
     } else if (!bitmap.isReady()) {
