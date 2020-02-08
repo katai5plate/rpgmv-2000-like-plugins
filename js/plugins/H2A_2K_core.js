@@ -186,7 +186,6 @@
       this._callCreationHook(bitmap);
       bitmap.addLoadListener(function() {
         bitmap.rotateHue(hue);
-        console.log(path);
         if (r2k.is2kPrefix(path, true)) {
           r2k.bitmapOnLoads(bitmap, path, hue);
         }

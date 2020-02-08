@@ -46,13 +46,20 @@
   - F12 キー
 - このプラグインはくらむぼん氏の QuickMove.js を改変したものです。
 
-### H2A_2K_onlineChipsetConverter.js
+### H2A_2K_chipsetConverter.js
+
+<details><summary>画像を開く</summary><div>
+
+![image](https://user-images.githubusercontent.com/22496143/74091770-9f1f5200-4afe-11ea-8893-ba4f7d1c8693.png)
+
+![image](https://user-images.githubusercontent.com/22496143/74091778-b9f1c680-4afe-11ea-9435-8cd6b60262e5.png)
+
+</div></details>
 
 - ディレクトリ内の 2000 チップセットを MV に一括変換します。
-- くらむぼん氏の RPG ツクール 2000→MV 素材変換器 をオンラインで実行します。
-  - そのため、使用するにはインターネット環境が必要です。
+- 処理内容はくらむぼん氏の RPG ツクール 2000→MV 素材変換器 と同じです。
+  - くらむぼん氏からコードの一部利用の許諾をいただきました。
 - テストプレイ専用です。
-- スクレイピングの類ですので、変換器のソースコードが変更されると動かなくなる可能性があります。
 
 ## バグ報告について
 
