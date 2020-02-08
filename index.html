@@ -667,5 +667,16 @@
 
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      // タイトルスキップ
+      Scene_Boot.prototype.start = function() {
+        Scene_Base.prototype.start.call(this);
+        SoundManager.preloadImportantSounds();
+        this.checkPlayerLocation();
+        DataManager.setupNewGame();
+        SceneManager.goto(Scene_Map);
+        this.updateDocumentTitle();
+      };
+    </script>
   </body>
 </html>
