@@ -23,6 +23,14 @@
  * @param animation
  * @desc アニメーションタイル出力: 空文字 なら無効
  * @default 1
+ *
+ * @param src
+ * @desc 読込先(絶対パス, 末尾スラッシュなし): 空文字 ならデフォルト
+ * @default
+ *
+ * @param dist
+ * @desc 保存先(絶対パス, 末尾スラッシュなし): 空文字 ならデフォルト
+ * @default
  */
 
 (function() {
@@ -32,7 +40,9 @@
   var options = {
     chipSize: { 1: 1, 2: 2, 3: 3 }[pluginParams.chipSize] || 3,
     autotile: pluginParams.autotile !== "" ? true : false,
-    animation: pluginParams.animation !== "" ? true : false
+    animation: pluginParams.animation !== "" ? true : false,
+    src: pluginParams.src,
+    dist: pluginParams.dist
   };
 
   // くらむぼん氏の RPGツクール2000→MV素材変換器 から引用（認可済）
@@ -386,21 +396,25 @@
       var __path = require("path");
       var __fs = require("fs");
 
+      var srcDir =
+        options.src !== ""
+          ? options.src
+          : r2k.backslash(process.cwd() + IMG_TILESETS);
+      var distDir =
+        options.dist !== ""
+          ? options.dist
+          : r2k.backslash(process.cwd() + IMG_TILESETS);
+
       if (
         confirm(
-          `処理を開始します。よろしいですか？\n保存先: ${process.cwd() +
-            IMG_TILESETS}`
+          `処理を開始します。よろしいですか？\n\n読込先: ${srcDir}/2k_**.png\n保存先: ${distDir}/**_XX.png`
         ) === false
       ) {
         return;
       }
 
       // tilesets ディレクトリを探索
-      new Promise(r =>
-        __fs.readdir(r2k.backslash(process.cwd() + IMG_TILESETS), (_, f) =>
-          r(f)
-        )
-      )
+      new Promise(r => __fs.readdir(srcDir, (_, f) => r(f)))
         // 画像を絞り込み、Image化し、ロードされるまで待つ
         .then(function(fileList) {
           var list = fileList.filter(function(name) {
@@ -416,7 +430,8 @@
           return Promise.all(
             list.map(function(name) {
               var img = new Image();
-              img.src = `${IMG_TILESETS}/${name}`;
+              // img.src = `${IMG_TILESETS}/${name}`;
+              img.src = `${srcDir}/${name}`;
               return new Promise(function(resolve) {
                 img.onload = function() {
                   resolve(img);
@@ -432,7 +447,7 @@
             return convertChipset(image).map(function(v) {
               return {
                 dist: r2k.backslash(
-                  `${process.cwd()}${res.dir.match(/(\/img\/.*)$/)[1]}/${
+                  `${distDir}/${
                     v.type === "!$"
                       ? `${v.type}_${res.name.replace(/^2k_/, "")}`
                       : `${res.name.replace(/^2k_/, "")}_${v.type}`
