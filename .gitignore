@@ -11,6 +11,8 @@ movies
 save
 Game.rpgproject
 
+core
+
 # Logs
 logs
 *.log
