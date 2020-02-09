@@ -17,7 +17,7 @@
 
 - Mac, Linux, スマホ 環境下での動作は確かめてませんので、バグがあれば報告お願いします。
 - 補足: 基本的に 公式版コアスクリプト よりも コミュニティ版コアスクリプト のほうがバージョンは **上** です。
-  - [参考: コアスクリプトバージョン ダイアグラム](https://atsumaru.github.io/api-references/images/download/corescript_version_diagram.png)
+  - [コアスクリプトバージョン ダイアグラム](https://atsumaru.github.io/api-references/images/download/corescript_version_diagram.png)
 
 ## ダウンロード
 
