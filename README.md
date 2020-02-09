@@ -10,14 +10,14 @@
 
 ## 動作環境
 
-- コアスクリプト:
-  - [コミュニティ版コアスクリプト **community-1.3b**](https://atsumaru.github.io/api-references/download/corescript/)
-- RPG ツクール MV エディタ:
-  - バージョン **1.6.2**
+| 分類                     | バージョン                                                                                          |
+| ------------------------ | --------------------------------------------------------------------------------------------------- |
+| コアスクリプト           | [コミュニティ版 **community-1.3b**](https://atsumaru.github.io/api-references/download/corescript/) |
+| RPG ツクール MV エディタ | [**1.6.2**](https://rpgtkool.hatenablog.com/entry/2019/02/04/162news)                               |
 
 - Mac, Linux, スマホ 環境下での動作は確かめてませんので、バグがあれば報告お願いします。
 - 補足: 基本的に 公式版コアスクリプト よりも コミュニティ版コアスクリプト のほうがバージョンは **上** です。
-    - [参考: コアスクリプトバージョン ダイアグラム](https://atsumaru.github.io/api-references/images/download/corescript_version_diagram.png)
+  - [参考: コアスクリプトバージョン ダイアグラム](https://atsumaru.github.io/api-references/images/download/corescript_version_diagram.png)
 
 ## ダウンロード
 
