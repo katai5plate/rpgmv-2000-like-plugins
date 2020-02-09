@@ -666,7 +666,13 @@
     ></script>
 
     <script type="text/javascript" src="js/plugins.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+      // main.js
+      PluginManager.setup($plugins);
+      window.onload = function() {
+        SceneManager.run(Scene_Boot);
+      };
+    </script>
     <script>
       // タイトルスキップ
       Scene_Boot.prototype.start = function() {

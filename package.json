@@ -1,9 +1,15 @@
 {
   "name": "rpgmv-2000-like-plugins",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "ツクールMVでツクール2000のような挙動を目指したいプラグイン集",
   "main": "index.html",
   "scripts": {
+    "gen": "run-s gen:*",
+    "gen:dir": "rimraf ./dist && mkdirp ./dist/js ./dist/node_modules/openmv/js",
+    "gen:assets": "cpx -C \"./{audio,data,fonts,icon,img,movies,save}/**/*.*\" ./dist",
+    "gen:js": "cpx -C \"./js/**/*.js\" ./dist/js",
+    "gen:core": "cpx -C \"./node_modules/openmv/js/{libs,rpg_core,rpg_managers,rpg_objects,rpg_scenes,rpg_sprites,rpg_windows}/**/*.js\" ./dist/node_modules/openmv/js",
+    "gen:etc": "cpx -C \"./{Game.rpgproject,package.json,index.html}\" ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,9 +23,6 @@
     "url": "https://github.com/katai5plate/rpgmv-2000-like-plugins/issues"
   },
   "homepage": "https://github.com/katai5plate/rpgmv-2000-like-plugins#readme",
-  "dependencies": {
-    "openmv": "rpgtkoolmv/corescript#v1.3b"
-  },
   "js-flags": "--expose-gc",
   "window": {
     "title": "",
@@ -27,5 +30,13 @@
     "width": 816,
     "height": 624,
     "icon": "icon/icon.png"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "mkdirp": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "openmv": "rpgtkoolmv/corescript#v1.3b",
+    "rimraf": "^3.0.2",
+    "shx": "^0.3.2"
   }
 }
