@@ -4,6 +4,13 @@
 
 そんなプラグイン集。今後も続々気まぐれ公開予定。
 
+## 動作環境
+
+- コアスクリプト:
+  - (コミュニティ版コアスクリプト community-1.3b)[https://atsumaru.github.io/api-references/download/corescript/]
+- エディタ
+  - バージョン 1.6.2
+
 ## ダウンロード
 
 1. [こちらから zip をダウンロード](https://github.com/katai5plate/rpgmv-2000-like-plugins/archive/master.zip)
