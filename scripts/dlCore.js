@@ -1,5 +1,5 @@
 const clone = require("./gitClone");
-const rm = require("rimraf");
+const rimraf = require("rimraf");
 const { core } = require("../config.json");
 
 // コアスクリプトの各バージョンをクローンする
@@ -12,7 +12,7 @@ Promise.all(
       dirs.map(
         dir =>
           new Promise(done => {
-            rm(`${dir}/.git`, done);
+            rimraf(`${dir}/.git`, done);
           })
       )
     )
