@@ -1,4 +1,6 @@
 # rpgmv-2000-like-plugins
+![version](https://img.shields.io/github/package-json/v/katai5plate/rpgmv-2000-like-plugins)
+![license](https://img.shields.io/github/license/katai5plate/rpgmv-2000-like-plugins)
 
 テーマは「ツクール MV で ツクール 2000 する」
 
