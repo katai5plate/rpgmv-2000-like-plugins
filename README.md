@@ -12,6 +12,8 @@
 
 - コアスクリプト:
   - [コミュニティ版コアスクリプト community-1.3b](https://atsumaru.github.io/api-references/download/corescript/)
+  - 補足: 基本的に 公式版コアスクリプト よりも コミュニティ版コアスクリプト のほうがバージョンは **上** です。
+    - [参考: コアスクリプトバージョン ダイアグラム](https://atsumaru.github.io/api-references/images/download/corescript_version_diagram.png)
 - RPG ツクール MV エディタ:
   - バージョン 1.6.2
 
