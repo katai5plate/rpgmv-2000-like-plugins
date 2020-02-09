@@ -7,6 +7,8 @@
  * プラグインが動作しない場合、
  * 公開元に書かれている動作環境を確認してください。
  * https://github.com/katai5plate/rpgmv-2000-like-plugins/blob/master/README.md#%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83
+ *
+ * また、非推奨の環境下で動作させた場合は、コンソール (F8) に警告が出ますので確認してください。
  */
 
 (function() {
@@ -14,6 +16,11 @@
 
   // プラグイン共通ユーティリティ
   var r2k = {
+    warn: function(when, title, desc, dataname, data) {
+      if (when) {
+        console.warn("警告！", title, desc, `${dataname}:`, data);
+      }
+    },
     // 配列を分ける
     chunk: function(arr, size) {
       return Array.from(
@@ -120,6 +127,21 @@
     }
   };
   window.r2k = r2k;
+
+  // バージョンバリデーション (全部コアスクリプトに定義されてる)
+  r2k.warn(
+    Utils.RPGMAKER_ENGINE !== "community-1.3b" ||
+      Utils.RPGMAKER_NAME !== "MV" ||
+      Utils.RPGMAKER_VERSION !== "1.6.1",
+    "コアスクリプトのバージョンが動作環境と異なります！",
+    "正常な動作が行われない可能性があります。",
+    "現在のバージョン",
+    [
+      `コアスクリプト: ${Utils.RPGMAKER_ENGINE}`,
+      `エディタ: ${Utils.RPGMAKER_VERSION}`,
+      `分類: ${Utils.RPGMAKER_NAME}`
+    ]
+  );
 
   // ファイル名で判断
   ImageManager.is2kPrefix = r2k.is2kPrefix;
