@@ -1,6 +1,6 @@
 {
   "name": "rpgmv-2000-like-plugins",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "ツクールMVでツクール2000のような挙動を目指したいプラグイン集",
   "main": "index.html",
   "scripts": {
