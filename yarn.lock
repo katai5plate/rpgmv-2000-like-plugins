@@ -2,6 +2,30 @@
 # yarn lockfile v1
 
 
-openmv@rpgtkoolmv/corescript#v1.3b:
+openmv_1-1@rpgtkoolmv/corescript#v1.1:
+  version "1.0.0"
+  resolved "https://codeload.github.com/rpgtkoolmv/corescript/tar.gz/7c9cd25d8b6537fa35b8438376183a5aa9e1fbf6"
+
+openmv_1-1b@rpgtkoolmv/corescript#v1.1b:
+  version "1.0.0"
+  resolved "https://codeload.github.com/rpgtkoolmv/corescript/tar.gz/2a2aab2158da416630b58f5574b14bf38fc4a4ac"
+
+openmv_1-2@rpgtkoolmv/corescript#v1.2:
+  version "1.0.0"
+  resolved "https://codeload.github.com/rpgtkoolmv/corescript/tar.gz/852df7d8f4ad109e36663b1a60c44d635202004c"
+
+openmv_1-2b@rpgtkoolmv/corescript#v1.2b:
+  version "1.0.0"
+  resolved "https://codeload.github.com/rpgtkoolmv/corescript/tar.gz/be15394acd3978310b788c881db8136f3b37cff1"
+
+openmv_1-2c@rpgtkoolmv/corescript#v1.2c:
+  version "1.0.0"
+  resolved "https://codeload.github.com/rpgtkoolmv/corescript/tar.gz/c62f21460e9c8209d4cbedcec9a849aafe7b0793"
+
+openmv_1-3@rpgtkoolmv/corescript#v1.3:
+  version "1.0.0"
+  resolved "https://codeload.github.com/rpgtkoolmv/corescript/tar.gz/3b426b6da7103435c5bfa4392562e9cb7e347543"
+
+openmv_1-3b@rpgtkoolmv/corescript#v1.3b, openmv_dev@rpgtkoolmv/corescript#v1.3b, openmv_lts@rpgtkoolmv/corescript:
   version "1.0.0"
   resolved "https://codeload.github.com/rpgtkoolmv/corescript/tar.gz/182e31449707ba7e406db0485c44c2a9d11e2dcd"

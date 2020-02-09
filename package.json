@@ -18,7 +18,15 @@
   },
   "homepage": "https://github.com/katai5plate/rpgmv-2000-like-plugins#readme",
   "dependencies": {
-    "openmv": "rpgtkoolmv/corescript#v1.3b"
+    "openmv_dev": "rpgtkoolmv/corescript#v1.3b",
+    "openmv_lts": "rpgtkoolmv/corescript",
+    "openmv_1-3b": "rpgtkoolmv/corescript#v1.3b",
+    "openmv_1-3": "rpgtkoolmv/corescript#v1.3",
+    "openmv_1-2c": "rpgtkoolmv/corescript#v1.2c",
+    "openmv_1-2b": "rpgtkoolmv/corescript#v1.2b",
+    "openmv_1-2": "rpgtkoolmv/corescript#v1.2",
+    "openmv_1-1b": "rpgtkoolmv/corescript#v1.1b",
+    "openmv_1-1": "rpgtkoolmv/corescript#v1.1"
   },
   "js-flags": "--expose-gc",
   "window": {
