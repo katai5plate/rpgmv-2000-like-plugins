@@ -8,8 +8,10 @@
 
 - コアスクリプト:
   - [コミュニティ版コアスクリプト community-1.3b](https://atsumaru.github.io/api-references/download/corescript/)
-- エディタ
+- RPG ツクール MV エディタ:
   - バージョン 1.6.2
+
+Mac, Linux 環境下での動作は確かめてませんので、バグがあれば報告お願いします。
 
 ## ダウンロード
 
