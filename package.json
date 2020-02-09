@@ -5,6 +5,7 @@
   "main": "index.html",
   "scripts": {
     "clone": "rimraf core && node ./scripts/dlCore",
+    "cypress": "cypress open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

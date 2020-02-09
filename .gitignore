@@ -13,6 +13,8 @@ Game.rpgproject
 
 core
 
+cypress/integration/examples
+
 # Logs
 logs
 *.log
