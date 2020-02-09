@@ -5,10 +5,10 @@
   "main": "index.html",
   "scripts": {
     "gen": "run-s gen:*",
-    "gen:dir": "rimraf ./dist && mkdirp ./dist/js",
+    "gen:dir": "rimraf ./dist && mkdirp ./dist/js ./dist/node_modules/openmv/js",
     "gen:assets": "cpx -C \"./{audio,data,fonts,icon,img,movies,save}/**/*.*\" ./dist",
     "gen:js": "cpx -C \"./js/**/*.js\" ./dist/js",
-    "gen:core": "cpx -C \"./node_modules/openmv/js/rpg_{core,managers,objects,scenes,sprites,windows}/**/*.js\" ./dist/js",
+    "gen:core": "cpx -C \"./node_modules/openmv/js/{libs,rpg_core,rpg_managers,rpg_objects,rpg_scenes,rpg_sprites,rpg_windows}/**/*.js\" ./dist/node_modules/openmv/js",
     "gen:etc": "cpx -C \"./{Game.rpgproject,package.json,index.html}\" ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
