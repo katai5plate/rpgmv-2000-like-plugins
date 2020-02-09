@@ -79,7 +79,7 @@
 
 ## バグ報告について
 
-- [ここからバグ報告をしてください](https://github.com/katai5plate/rpgmv-2000-like-plugins/issues)
+- [ここからバグ報告をしてください。](https://github.com/katai5plate/rpgmv-2000-like-plugins/issues)
 - バグ報告には GitHub のアカウント登録が必要です。`New issue` という緑色のボタンから報告してください。
 - バグ修正も歓迎します。このリポジトリを Fork して、変更したものを Pull Request してください。
 
