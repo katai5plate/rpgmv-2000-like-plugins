@@ -97,3 +97,16 @@ git clone https://github.com/katai5plate/rpgmv-2000-like-plugins
 cd rpgmv-2000-like-plugins
 yarn
 ```
+
+### 動作検証時の注意点
+
+#### デバッグ・テストプレイ方法
+
+1. ルートディレクトリに、テストしたいゲームプロジェクトのうち、以下のファイルをコピーする。
+
+- audio, data, fonts, icon, img, movies, save ディレクトリ
+- js/plugins.js, js/main.js
+- Game.rpgproject
+- 競合テストを行いたい場合は js/plugins の中の重複しないファイル
+
+2. Game.rpgproject を RPG ツクール MV エディタで開く。

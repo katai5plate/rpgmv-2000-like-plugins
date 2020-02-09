@@ -4,7 +4,9 @@
   "description": "ツクールMVでツクール2000のような挙動を目指したいプラグイン集",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clone": "rimraf core && node ./scripts/dlCore",
+    "cypress": "cypress open",
+    "test": "echo pass"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,7 @@
     "url": "https://github.com/katai5plate/rpgmv-2000-like-plugins/issues"
   },
   "homepage": "https://github.com/katai5plate/rpgmv-2000-like-plugins#readme",
-  "dependencies": {
-    "openmv": "rpgtkoolmv/corescript#v1.3b"
-  },
+  "dependencies": {},
   "js-flags": "--expose-gc",
   "window": {
     "title": "",
@@ -27,5 +27,10 @@
     "width": 816,
     "height": 624,
     "icon": "icon/icon.png"
+  },
+  "devDependencies": {
+    "cypress": "^4.0.1",
+    "openmv": "rpgtkoolmv/corescript#v1.3b",
+    "rimraf": "^3.0.2"
   }
 }
