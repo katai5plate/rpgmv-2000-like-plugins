@@ -384,7 +384,11 @@
   })
     // テストプレイ判定
     .then(function() {
-      if ($gameTemp.isPlaytest() !== true || window.require === undefined) {
+      if (
+        $gameTemp.isPlaytest() !== true ||
+        window.require === undefined ||
+        Utils.isNwjs() !== true
+      ) {
         return alert(ERR_TEST);
       }
       try {
