@@ -7,7 +7,7 @@
 ## 動作環境
 
 - コアスクリプト:
-  - (コミュニティ版コアスクリプト community-1.3b)[https://atsumaru.github.io/api-references/download/corescript/]
+  - [コミュニティ版コアスクリプト community-1.3b](https://atsumaru.github.io/api-references/download/corescript/)
 - エディタ
   - バージョン 1.6.2
 
