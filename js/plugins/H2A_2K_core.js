@@ -3,6 +3,10 @@
  * @author Had2Apps
  *
  * @help H2A_2K 系プラグインを使用する為に最初に読み込む必要があるプラグインです
+ *
+ * プラグインが動作しない場合、
+ * 公開元に書かれている動作環境を確認してください。
+ * https://github.com/katai5plate/rpgmv-2000-like-plugins/blob/master/README.md#%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83
  */
 
 (function() {
